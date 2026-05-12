@@ -13,3 +13,11 @@
     color: black !important;
   }
 }
+/* --- NIEWIDZIALNY SCROLL (Czysta Magia) --- */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE oraz Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Ukrywa pasek w Chrome, Safari i Operze */
+}
