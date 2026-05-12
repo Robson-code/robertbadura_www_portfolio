@@ -21,3 +21,25 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Ukrywa pasek w Chrome, Safari i Operze */
 }
+/* =========================================
+   NOWY, BEZPIECZNY GLITCH ZDJĘCIA (Filtry CSS)
+   ========================================= */
+
+@keyframes cyber-decode {
+  0%   { opacity: 0; filter: brightness(3) sepia(1) hue-rotate(180deg) saturate(5); }
+  10%  { opacity: 1; filter: brightness(0.5) invert(1); }
+  20%  { opacity: 0; filter: blur(5px); }
+  30%  { opacity: 1; filter: contrast(3) hue-rotate(90deg); }
+  40%  { filter: grayscale(1) blur(2px); }
+  50%  { filter: brightness(2) invert(0.5); }
+  60%  { filter: contrast(1.5) hue-rotate(300deg); }
+  70%  { opacity: 0.8; filter: none; }
+  80%  { filter: saturate(3) blur(1px); }
+  90%  { filter: brightness(1.2); }
+  100% { opacity: 1; filter: none; }
+}
+
+.animate-cyber-decode {
+  /* Używamy 'steps', żeby klatki przeskakiwały agresywnie, a nie płynnie */
+  animation: cyber-decode 0.9s steps(1) forwards;
+}

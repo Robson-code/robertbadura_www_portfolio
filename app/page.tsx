@@ -76,7 +76,7 @@ export default function Home() {
                 alt="Robert Badura Avatar"
                 fill
                 sizes="128px"
-                className="rounded-2xl object-cover border-2 border-emerald-400 shadow-xl shadow-emerald-500/20"
+                className="rounded-2xl object-cover border-2 border-emerald-400 shadow-xl shadow-emerald-500/20 animate-cyber-decode"
               />
             </div>
 
@@ -105,7 +105,7 @@ export default function Home() {
               </a>
               <a href="/cv_robert.pdf" target="_blank"
                  className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 rounded-lg font-semibold transition-colors shadow-lg shadow-blue-500/30 text-sm">
-                📄 Pobierz CV (PDF)
+                📄 Podejrzyj CV (PDF)
               </a>
             </div>
           </div>
