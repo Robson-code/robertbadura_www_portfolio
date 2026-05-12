@@ -3,10 +3,30 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import LiveCVPreview from './components/LiveCVPreview';
+import { useScramble } from 'use-scramble';
 
 export default function Home() {
   const [logs, setLogs] = useState<string[]>([]);
   const [isRunning, setIsRunning] = useState(false);
+
+  // KONFIGURACJA ANIMACJI HAKOWANIA (Imię i Nazwisko)
+  const { ref: scrambleRefH1 } = useScramble({
+    text: "Robert Badura",
+    speed: 0.3,
+    tick: 3,
+    step: 1,
+    scramble: 15,
+    chance: 1,
+  });
+
+  // KONFIGURACJA ANIMACJI HAKOWANIA (Tytuł Zawodowy)
+  const { ref: scrambleRefH2 } = useScramble({
+    text: "QA Automation Engineer",
+    speed: 0.2,
+    tick: 1,
+    step: 1,
+    scramble: 20,
+  });
 
   const runTests = () => {
     if (isRunning) return;
@@ -60,11 +80,12 @@ export default function Home() {
               />
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-              Robert Badura
+            {/* PODMIENIONY NAGŁÓWEK Z REFERENCJĄ DO ANIMACJI */}
+            <h1 ref={scrambleRefH1} className="text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 min-h-[60px] md:min-h-[80px]">
             </h1>
-            <h2 className="text-2xl font-medium text-slate-300">
-              QA Automation Engineer
+            
+            {/* PODMIENIONY PODTYTUŁ Z REFERENCJĄ DO ANIMACJI */}
+            <h2 ref={scrambleRefH2} className="text-2xl font-medium text-slate-300 min-h-[40px]">
             </h2>
             
             <p className="text-lg text-slate-400 leading-relaxed">
@@ -90,7 +111,7 @@ export default function Home() {
           </div>
 
           <div className="w-full mt-24 space-y-8">
-            <h3 className="text-2xl font-bold border-b border-slate-700 pb-4">QA Potrfolio & Laboratory 🔬</h3>
+            <h3 className="text-2xl font-bold border-b border-slate-700 pb-4">QA Laboratory 🔬</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-blue-400 transition-colors group">
@@ -115,7 +136,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* TUTAJ TWÓJ PROJEKT WEZSLOWO */}
               <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-emerald-400 transition-colors group">
                 <h4 className="text-xl font-bold text-emerald-400 mb-2">Weź Słowo - API & Web App</h4>
                 <p className="text-slate-400 mb-4 text-sm leading-relaxed">
