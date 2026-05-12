@@ -45,13 +45,10 @@ export default function Home() {
     <main className="min-h-screen bg-slate-900 text-white p-4 md:p-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-        {/* NASZ NOWY, ZEWNĘTRZNY KOMPONENT CV */}
         <LiveCVPreview />
 
-        {/* PRAWA KOLUMNA: GŁÓWNY DASHBOARD */}
         <div className="lg:col-span-8 xl:col-span-9 flex flex-col items-center">
           
-          {/* SEKCJA HERO */}
           <div className="max-w-2xl text-center space-y-6 flex flex-col items-center">
             <div className="relative w-32 h-32 mb-4">
               <Image 
@@ -92,15 +89,14 @@ export default function Home() {
             </div>
           </div>
 
-          {/* SEKCJA PROJEKTÓW */}
           <div className="w-full mt-24 space-y-8">
-            <h3 className="text-2xl font-bold border-b border-slate-700 pb-4">QA Laboratory 🔬</h3>
+            <h3 className="text-2xl font-bold border-b border-slate-700 pb-4">QA Potrfolio & Laboratory 🔬</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-blue-400 transition-colors group">
                 <h4 className="text-xl font-bold text-blue-400 mb-2">E2E Automation Framework</h4>
                 <p className="text-slate-400 mb-4 text-sm leading-relaxed">
-                  Kompleksowy framework testowy dla e-commerce. Wdrożona architektura POM, testy wizualne (Visual Regression) łapiące zmiany co do piksela oraz pełne CI/CD z użyciem GitHub Actions.
+                  Kompleksowy framework testowy dla e-commerce (SauceDemo). Architektura POM, testy wizualne oraz pełne CI/CD w GitHub Actions.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="text-xs font-semibold bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Playwright</span>
@@ -110,7 +106,7 @@ export default function Home() {
                 <div className="flex gap-3 no-print">
                   <a href="https://robson-code.github.io/playwright-saucedemo-portfolio/" target="_blank" rel="noreferrer" 
                      className="text-sm px-4 py-2 bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/40 rounded transition-colors font-medium">
-                    📊 Live HTML Report
+                    📊 Raport Live
                   </a>
                   <a href="https://github.com/Robson-code/playwright-saucedemo-portfolio" target="_blank" rel="noreferrer" 
                      className="text-sm px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded transition-colors font-medium">
@@ -119,10 +115,11 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* TUTAJ TWÓJ PROJEKT WEZSLOWO */}
               <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-emerald-400 transition-colors group">
-                <h4 className="text-xl font-bold text-emerald-400 mb-2">Web Performance & API Testing</h4>
+                <h4 className="text-xl font-bold text-emerald-400 mb-2">Weź Słowo - API & Web App</h4>
                 <p className="text-slate-400 mb-4 text-sm leading-relaxed">
-                  Projekt oparty na losowaniu wersetów biblijnych. Wykorzystany jako poligon doświadczalny do testów wydajnościowych (Lighthouse) oraz weryfikacji poprawności odpowiedzi z REST API.
+                  Aplikacja losująca wersety biblijne. Projekt wykorzystany do testów wydajnościowych (Lighthouse) oraz walidacji odpowiedzi z REST API.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="text-xs font-semibold bg-emerald-900/50 text-emerald-300 px-2 py-1 rounded">REST API</span>
@@ -130,16 +127,20 @@ export default function Home() {
                   <span className="text-xs font-semibold bg-slate-700 text-slate-300 px-2 py-1 rounded">Lighthouse</span>
                 </div>
                 <div className="flex gap-3 no-print">
-                  <span className="text-sm px-4 py-2 bg-slate-700 text-slate-400 rounded cursor-not-allowed font-medium italic">
-                    W trakcie testów...
-                  </span>
+                  <a href="https://robson-code.github.io/wezslowo/" target="_blank" rel="noreferrer" 
+                     className="text-sm px-4 py-2 bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/40 rounded transition-colors font-medium">
+                    🚀 Live Demo
+                  </a>
+                  <a href="https://github.com/Robson-code/wezslowo" target="_blank" rel="noreferrer" 
+                     className="text-sm px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded transition-colors font-medium">
+                    Kod źródłowy
+                  </a>
                 </div>
               </div>
 
             </div>
           </div>
 
-          {/* TERMINAL QA */}
           <div className="w-full mt-24 mb-24 no-print">
             <h3 className="text-2xl font-bold border-b border-slate-700 pb-4 mb-8">Live Terminal 💻</h3>
             <div className="bg-[#1e1e1e] rounded-xl overflow-hidden shadow-2xl border border-slate-700">
