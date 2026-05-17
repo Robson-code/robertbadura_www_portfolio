@@ -45,36 +45,65 @@
 }
 
 /* =========================================
-   ANIMACJA KURSORA (KOMETA + BLINK)
+   ANIMACJA KOMETY ZE SMUGĄ (COMET TRAIL)
    ========================================= */
 
-@keyframes comet-land {
+@keyframes comet-flight {
   0% {
     opacity: 0;
-    transform: translate(200px, -200px) scale(2, 0.5) rotate(-45deg);
-    text-shadow: 0 0 30px #34d399, 0 0 60px #34d399; /* Mocne zielone światło */
+    transform: translate(250px, -250px) scale(2, 0.5) rotate(-45deg);
+    filter: brightness(3) blur(2px); /* Ogień na starcie */
+    text-shadow: 0 0 20px #34d399, 0 0 40px #34d399;
   }
-  70% {
+  10% {
     opacity: 1;
-    transform: translate(-10px, 10px) scale(0.9, 1.1) rotate(0deg);
-    text-shadow: 0 0 10px #34d399;
+  }
+  /* Head uderza w cel, smugi jeszcze lecą */
+  80% {
+     filter: brightness(2) blur(1px);
+     text-shadow: 0 0 10px #34d399;
   }
   100% {
     opacity: 1;
-    transform: translate(0, 0) scale(1, 1) rotate(0deg);
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    filter: brightness(1) blur(0px);
     text-shadow: 0 0 0px transparent;
   }
 }
 
-@keyframes terminal-blink {
+/* Animacja dla smugi - zanikanie po wylądowaniu */
+@keyframes trail-fade-out {
+  0% { opacity: 0.8; filter: blur(3px); }
+  50% { opacity: 0.4; filter: blur(6px); }
+  100% { opacity: 0; filter: blur(10px); }
+}
+
+@keyframes terminal-blink { /* Bez zmian */
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
-.animate-comet-cursor {
+/* Klasa dla głównego kursora (Głowa Komety) */
+.cursor-head {
   display: inline-block;
-  /* Dwie animacje w jednej: lądowanie trwa 0.5s, a mruganie włącza się po 0.5s */
+  margin-left: 0.25rem;
+  color: #34d399; /* emerald-400 */
+  animation:
+     comet-flight 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+     terminal-blink 1s step-end infinite 0.6s; /* Blink po locie */
+  will-change: transform, opacity; /* Optymalizacja */
+}
+
+/* Klasa dla smugi (Ogona Komety) */
+.cursor-trail {
+  position: absolute; /* Nakłada smugi na siebie */
+  display: inline-block;
+  color: #10b981; /* emerald-500, lekko ciemniejszy dla smugi */
+  mix-blend-mode: plus-lighter; /* Magia sumowania światła */
+  opacity: 0;
+  /* Animacja smugi: lot + zanikanie */
   animation: 
-    comet-land 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards,
-    terminal-blink 1s step-end infinite 0.5s;
+    comet-flight 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    trail-fade-out 0.6s ease-out 0.6s forwards; /* Fades out AFTER flight */
+  will-change: transform, opacity;
 }

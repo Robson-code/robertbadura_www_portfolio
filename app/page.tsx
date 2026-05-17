@@ -15,7 +15,7 @@ export default function Home() {
   // KONFIGURACJA ANIMACJI HAKOWANIA (Imię i Nazwisko)
   const { ref: scrambleRefH1 } = useScramble({
     text: "Robert Badura",
-    speed: 0.7,
+    speed: 0.5,
     tick: 3,
     step: 1,
     scramble: 15,
@@ -82,17 +82,21 @@ export default function Home() {
                 alt="Robert Badura Avatar"
                 fill
                 sizes="128px"
+                priority /* 👈 FIX WYDAJNOŚCI LCP */
                 className="rounded-2xl object-cover border-2 border-emerald-400 shadow-xl shadow-emerald-500/20 animate-cyber-decode"
               />
             </div>
 
-            {/* --- ZMODYFIKOWANY NAGŁÓWEK Z KURSOREM --- */}
-            <div className="flex items-center justify-center min-h-[60px] md:min-h-[80px]">
+            {/* --- ZMODYFIKOWANY NAGŁÓWEK Z KOMETĄ I SMUGĄ --- */}
+            <div className="flex items-center justify-center min-h-[60px] md:min-h-[80px] relative">
               <h1 ref={scrambleRefH1} className="text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
               </h1>
+              
               {isScrambleDone && (
-                <span className="text-5xl md:text-6xl font-bold text-emerald-400 ml-1 animate-comet-cursor">
-                  _
+                <span className="text-5xl md:text-6xl font-bold ml-1 relative">
+                  <span className="cursor-head">_</span>
+                  <span className="cursor-trail" style={{ animationDelay: '0.04s', filter: 'blur(2px)', opacity: 0.6 }}>_</span>
+                  <span className="cursor-trail" style={{ animationDelay: '0.08s', filter: 'blur(5px)', opacity: 0.3 }}>_</span>
                 </span>
               )}
             </div>
