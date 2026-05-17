@@ -107,3 +107,36 @@
     trail-fade-out 0.6s ease-out 0.6s forwards; /* Fades out AFTER flight */
   will-change: transform, opacity;
 }
+
+/* =========================================
+   ANIMACJA FALI ŚWIATŁA NA OPISIE (DESC WAVE)
+   ========================================= */
+
+@keyframes description-light-wave {
+  0% {
+    background-position: -200% center; 
+  }
+  100% {
+    background-position: 200% center; 
+  }
+}
+
+.animate-description-wave {
+  /* Baza z kolorem liter, fala z pomarańczem/złotem przechodząca przez środek */
+  background: linear-gradient(
+    to right,
+    #60a5fa 10%,   /* blue-400 */
+    #34d399 30%,   /* emerald-400 */
+    #fbbf24 50%,   /* amber-400 (środek fali) */
+    #f97316 60%,   /* orange-500 (środek fali) */
+    #34d399 70%,   /* emerald-400 */
+    #60a5fa 90%    /* blue-400 */
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* 8 sekund to idealne, wolne i dostojne tempo dla fali */
+  animation: description-light-wave 8s linear infinite; 
+}

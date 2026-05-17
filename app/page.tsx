@@ -104,7 +104,8 @@ export default function Home() {
             <h2 ref={scrambleRefH2} className="text-2xl font-medium text-slate-300 min-h-[40px]">
             </h2>
             
-            <p className="text-lg text-slate-400 leading-relaxed">
+            {/* --- ANIMOWANY OPIS --- */}
+            <p className="text-lg leading-relaxed animate-description-wave font-medium text-center">
               Specjalizuję się w budowaniu niezawodnych systemów testowych. 
               Moje podejście łączy czysty kod z kontrolą jakości, 
               eliminując błędy zanim trafią do użytkowników.
