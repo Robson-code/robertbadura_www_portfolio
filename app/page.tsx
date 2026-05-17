@@ -116,7 +116,7 @@ export default function Home() {
                  className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 rounded-lg font-semibold transition-colors border border-slate-700 text-sm">
                 Mój GitHub
               </a>
-              <a href="https://www.linkedin.com/in/TWOJ-PROFIL" target="_blank" rel="noreferrer" 
+              <a href="https://www.linkedin.com/in/robert-badura-6699b010b/" target="_blank" rel="noreferrer" 
                  className="px-5 py-2.5 bg-[#0077b5] hover:bg-[#00669c] rounded-lg font-semibold transition-colors text-sm">
                 Mój LinkedIn
               </a>
@@ -164,7 +164,7 @@ export default function Home() {
                   <span className="text-xs font-semibold bg-slate-700 text-slate-300 px-2 py-1 rounded">Lighthouse</span>
                 </div>
                 <div className="flex gap-3 no-print">
-                  <a href="https://robson-code.github.io/wezslowo/" target="_blank" rel="noreferrer" 
+                  <a href="https://wezslowo.pl/" target="_blank" rel="noreferrer" 
                      className="text-sm px-4 py-2 bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/40 rounded transition-colors font-medium">
                     🚀 Live Demo
                   </a>
