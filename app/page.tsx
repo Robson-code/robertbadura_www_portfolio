@@ -90,7 +90,7 @@ export default function Home() {
             
             <p className="text-lg text-slate-400 leading-relaxed">
               Specjalizuję się w budowaniu niezawodnych systemów testowych. 
-              Moje podejście łączy czysty kod TypeScript z rygorystyczną kontrolą jakości, 
+              Moje podejście łączy czysty kod z kontrolą jakości, 
               eliminując błędy zanim trafią do użytkowników.
             </p>
 
@@ -111,7 +111,7 @@ export default function Home() {
           </div>
 
           <div className="w-full mt-24 space-y-8">
-            <h3 className="text-2xl font-bold border-b border-slate-700 pb-4">QA Laboratory 🔬</h3>
+            <h3 className="text-2xl font-bold border-b border-slate-700 pb-4">QA Laboratory 🔬 Zerknij na moje projekty 👇️</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-blue-400 transition-colors group">
@@ -162,7 +162,7 @@ export default function Home() {
           </div>
 
           <div className="w-full mt-24 mb-24 no-print">
-            <h3 className="text-2xl font-bold border-b border-slate-700 pb-4 mb-8">Live Terminal 💻</h3>
+            <h3 className="text-2xl font-bold border-b border-slate-700 pb-4 mb-8">Wykonaj TESTY Live i pobierz raport 💻</h3>
             <div className="bg-[#1e1e1e] rounded-xl overflow-hidden shadow-2xl border border-slate-700">
               <div className="bg-[#2d2d2d] px-4 py-3 flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -216,7 +216,7 @@ export default function Home() {
 
         {/* --- BLOK C: CHATBOT (order-3 na każdym ekranie, przesunięty w prawo na PC) --- */}
         <div className="order-3 lg:order-3 lg:col-span-8 lg:col-start-5 xl:col-span-9 xl:col-start-4 w-full mb-24 no-print">
-           <h3 className="text-2xl font-bold border-b border-slate-700 pb-4 mb-8">Ask my AI Assistant 🤖</h3>
+           <h3 className="text-2xl font-bold border-b border-slate-700 pb-4 mb-8">Ask my AI Assistant 🤖 (In progress...)</h3>
            <Chatbot />
         </div>
 

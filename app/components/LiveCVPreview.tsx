@@ -1,113 +1,103 @@
+'use client';
+
 export default function LiveCVPreview() {
   return (
-    <aside className="w-full lg:col-span-4 xl:col-span-3 order-2 lg:order-1 lg:sticky top-8 lg:h-[calc(100vh-4rem)] h-auto no-print">
-      <div className="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 backdrop-blur-sm h-full flex flex-col">
+    <aside className="w-full lg:col-span-4 xl:col-span-3 order-2 lg:order-1 lg:sticky top-8 lg:h-[calc(100vh-4rem)] h-auto no-print flex flex-col">
+      <div className="bg-[#1e1e1e] rounded-xl border border-slate-700 shadow-2xl overflow-hidden flex flex-col h-full">
         
-        {/* NAGŁÓWEK KARTY */}
-        <div className="border-b border-slate-700 pb-4 shrink-0">
-          <h3 className="text-xl font-bold text-emerald-400">Live CV Preview</h3>
-          <p className="text-xs text-slate-400 mt-1">Szybki podgląd profilu</p>
-        </div>
-
-        {/* ZBIORCZY KONTENER NA SEKCJE SCROLLOWANE */}
-        <div className="flex-1 flex flex-col min-h-0 mt-6 gap-6">
-
-          {/* =========================================
-              GÓRNA POŁOWA: DOŚWIADCZENIE (ZMIENIONO NA flex-[4])
-              ========================================= */}
-          {/* 👇 TUTAJ REGULUJESZ WYSOKOŚĆ DOŚWIADCZENIA 👇 */}
-          <div className="flex-[5] flex flex-col min-h-0">
-            <h4 className="text-xs font-bold text-slate-500 mb-4 uppercase tracking-widest shrink-0">
-              Doświadczenie
-            </h4>
-            <div className="overflow-y-auto hide-scrollbar flex-1 pr-2">
-              <div className="space-y-6 border-l border-slate-700 ml-2 pl-4 pb-2">
-                
-                <div className="relative">
-                  <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></div>
-                  <h5 className="text-sm font-bold text-slate-200">QA Engineer</h5>
-                  <p className="text-xs text-blue-400 mb-1">ADB Polska • 2022 - Obecnie</p>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    Budowa frameworków E2E w Playwright i TypeScript. Konfiguracja pipeline'ów CI/CD w GitHub Actions.
-                  </p>
-                </div>
-
-                <div className="relative">
-                  <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-slate-500"></div>
-                  <h5 className="text-sm font-bold text-slate-200">Manual QA Tester</h5>
-                  <p className="text-xs text-slate-500 mb-1">Poprzednia Firma • 2020 - 2022</p>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    Testy funkcjonalne, tworzenie przypadków testowych w Jira, ścisła współpraca z zespołem dev.
-                  </p>
-                </div>
-
-                <div className="relative">
-                  <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-slate-500"></div>
-                  <h5 className="text-sm font-bold text-slate-200">Junior Tester</h5>
-                  <p className="text-xs text-slate-500 mb-1">Jeszcze Inna Firma • 2018 - 2020</p>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    Wykonywanie testów eksploracyjnych i regresyjnych w oparciu o dokumentację.
-                  </p>
-                </div>
-
-              </div>
+        {/* --- HEADER CV --- */}
+        <div className="bg-slate-800 p-4 border-b border-slate-700">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-8 h-8 rounded bg-emerald-500/20 flex items-center justify-center border border-emerald-500/50">
+              <span className="text-emerald-400 font-bold">QA</span>
+            </div>
+            <div>
+              <h2 className="font-bold text-slate-100 leading-tight">Robert Badura</h2>
+              <p className="text-xs text-emerald-400 font-mono">Automation Engineer</p>
             </div>
           </div>
+        </div>
 
-          {/* =========================================
-              ŚRODEK: EDUKACJA (ZMIENIONO NA flex-[6])
-              ========================================= */}
-          {/* 👇 TUTAJ REGULUJESZ WYSOKOŚĆ EDUKACJI 👇 */}
-          <div className="flex-[5] flex flex-col min-h-0 pt-6 border-t border-slate-700/50">
-            <h4 className="text-xs font-bold text-slate-500 mb-4 uppercase tracking-widest shrink-0">
-              Edukacja
-            </h4>
-            <div className="overflow-y-auto hide-scrollbar flex-1 pr-2 space-y-8">
-              <div className="space-y-6 border-l border-slate-700 ml-2 pl-4 pb-2">
-                
-                <div className="relative">
-                  <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]"></div>
-                  <h5 className="text-sm font-bold text-slate-200">Inżynieria Oprogramowania</h5>
-                  <p className="text-xs text-slate-500 mb-1">Politechnika • 2016 - 2020</p>
-                  <p className="text-xs text-slate-400">Tytuł inżyniera. Specjalizacja: Testowanie i Jakość.</p>
-                </div>
+        {/* --- ZAWARTOŚĆ CV (Przewijana) --- */}
+        <div className="p-5 overflow-y-auto hide-scrollbar flex-1 space-y-8 bg-[#161b22]">
+          
+          {/* DOSWIADCZENIE */}
+          <section>
+            <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 border-b border-slate-700 pb-2">Experience</h3>
+            
+            <div className="space-y-6">
+              {/* ADB Polska */}
+              <div className="relative pl-4 border-l-2 border-emerald-500/30">
+                <div className="absolute w-2 h-2 bg-emerald-400 rounded-full -left-[5px] top-1.5 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></div>
+                <h4 className="font-bold text-slate-200 text-sm">QA Engineer</h4>
+                <p className="text-xs text-emerald-400 mb-2">ADB Polska | 05.2022 – Present (almost 4 yrs)</p>
+                <ul className="text-xs text-slate-400 space-y-1.5 list-disc pl-3">
+                  <li>Executing End-to-End (E2E) manual & automation tests for broadband software and router management platforms.</li>
+                  <li>Managing defect lifecycle in Jira, maintaining docs in Confluence, and using basic SQL for database verification.</li>
+                  <li>Monitoring automated suites, analyzing logs, and utilizing GitHub for version control in an Agile/Scrum environment.</li>
+                </ul>
+              </div>
 
-                <div className="relative">
-                  <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.8)]"></div>
-                  <h5 className="text-sm font-bold text-slate-200">Certyfikat ISTQB Foundation</h5>
-                  <p className="text-xs text-slate-500 mb-1">GASQ • 2021</p>
-                  <p className="text-xs text-slate-400">Międzynarodowy certyfikat poświadczający wiedzę z zakresu testowania oprogramowania.</p>
-                </div>
+              {/* Orange Polska */}
+              <div className="relative pl-4 border-l-2 border-slate-700">
+                <div className="absolute w-2 h-2 bg-slate-500 rounded-full -left-[5px] top-1.5"></div>
+                <h4 className="font-bold text-slate-200 text-sm">Network Dev Planning Specialist</h4>
+                <p className="text-xs text-blue-400 mb-2">Orange Polska | 03.2016 – 02.2020</p>
+                <ul className="text-xs text-slate-400 space-y-1.5 list-disc pl-3">
+                  <li>Planned, designed, and deployed broadband network infrastructure and IPDSLAM central office equipment.</li>
+                  <li>Executed network optimization projects and maintained long-term B2B relations with international vendors.</li>
+                </ul>
+              </div>
 
-                <div className="relative">
-                  <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.8)]"></div>
-                  <h5 className="text-sm font-bold text-slate-200">Kurs: Master Playwright</h5>
-                  <p className="text-xs text-slate-500 mb-1">Udemy • 2022</p>
-                  <p className="text-xs text-slate-400">Zaawansowane techniki automatyzacji, API testing oraz wdrażanie CI/CD.</p>
-                </div>
-
+              {/* Ericsson */}
+              <div className="relative pl-4 border-l-2 border-slate-700">
+                <div className="absolute w-2 h-2 bg-slate-500 rounded-full -left-[5px] top-1.5"></div>
+                <h4 className="font-bold text-slate-200 text-sm">IP & Voice Services Specialist</h4>
+                <p className="text-xs text-blue-400 mb-2">Ericsson | 04.2008 – 10.2015</p>
+                <ul className="text-xs text-slate-400 space-y-1.5 list-disc pl-3">
+                  <li>Operated telecom systems and provided xDSL/VoIP service maintenance for major Polish providers.</li>
+                  <li>Performed remote troubleshooting (CRM Clarify) and acted as Shift Leader, achieving top KPI performance.</li>
+                </ul>
               </div>
             </div>
-          </div>
+          </section>
+
+          {/* EDUKACJA */}
+          <section>
+            <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 border-b border-slate-700 pb-2">Education</h3>
+            
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-bold text-slate-200 text-sm">Automation Tester (Postgraduate)</h4>
+                <p className="text-xs text-emerald-400">WSB Merito | 10.2025 – Present</p>
+                <p className="text-xs text-slate-400 mt-0.5">Specialization: Web application test automation.</p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-200 text-sm">IT Networks & Security (Engineer)</h4>
+                <p className="text-xs text-slate-500">WSB w Poznaniu | 10.2018 – 06.2020</p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-200 text-sm">Electronics & Telecommunication</h4>
+                <p className="text-xs text-slate-500">Silesian University of Technology | 10.2002 – 06.2007</p>
+              </div>
+            </div>
+          </section>
+
+          {/* SKILLS TAGS */}
+          <section className="pb-4">
+            <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 border-b border-slate-700 pb-2">Core Tech Stack</h3>
+            <div className="flex flex-wrap gap-1.5">
+              {['Playwright', 'Cypress', 'Selenium', 'TypeScript', 'Python', 'Basic SQL', 'Jira', 'Confluence', 'GitHub', 'CI/CD'].map((skill) => (
+                <span key={skill} className="px-2 py-1 bg-slate-800 text-slate-300 text-[10px] rounded border border-slate-700">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </section>
 
         </div>
-
-        {/* =========================================
-            DOLNA STREFA: TECH STACK (ZAWSZE WIDOCZNY)
-            ========================================= */}
-        <div className="shrink-0 pt-6 mt-4 border-t border-slate-700/50">
-          <h4 className="text-xs font-bold text-slate-500 mb-4 uppercase tracking-widest">
-            Tech Stack
-          </h4>
-          <div className="flex flex-wrap gap-2">
-            {['Playwright', 'TypeScript', 'JavaScript', 'Cypress', 'GitHub Actions', 'Postman', 'SQL', 'Jira', 'Agile/Scrum', 'CI/CD'].map(skill => (
-              <span key={skill} className="text-[10px] font-medium bg-slate-700 text-slate-300 px-2 py-1 rounded">
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-
       </div>
     </aside>
   );

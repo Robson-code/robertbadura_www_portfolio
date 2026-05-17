@@ -46,7 +46,7 @@ export default function Chatbot() {
     <div className="w-full mt-12 bg-[#0d1117] rounded-xl border border-slate-700 overflow-hidden shadow-2xl font-mono text-sm">
       {/* Header */}
       <div className="bg-slate-800 px-4 py-2 border-b border-slate-700 flex justify-between items-center">
-        <span className="text-emerald-400 font-bold">QA_ASSISTANT_v1.0.exe</span>
+        <span className="text-emerald-400 font-bold">QA_ASSISTANT_v1.3</span>
         <div className="flex gap-1.5">
           <div className="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
