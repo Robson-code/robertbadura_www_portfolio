@@ -9,21 +9,25 @@ import { useScramble } from 'use-scramble';
 export default function Home() {
   const [logs, setLogs] = useState<string[]>([]);
   const [isRunning, setIsRunning] = useState(false);
+  // 👇 NOWY STAN DLA KURSORA 👇
+  const [isScrambleDone, setIsScrambleDone] = useState(false);
 
   // KONFIGURACJA ANIMACJI HAKOWANIA (Imię i Nazwisko)
   const { ref: scrambleRefH1 } = useScramble({
     text: "Robert Badura",
-    speed: 0.3,
+    speed: 0.7,
     tick: 3,
     step: 1,
     scramble: 15,
     chance: 1,
+    // 👇 TO ODPALA KOMETĘ PO ZAKOŃCZENIU HAKOWANIA 👇
+    onAnimationEnd: () => setIsScrambleDone(true), 
   });
 
   // KONFIGURACJA ANIMACJI HAKOWANIA (Tytuł Zawodowy)
   const { ref: scrambleRefH2 } = useScramble({
     text: "QA Automation Engineer",
-    speed: 0.2,
+    speed: 0.3,
     tick: 1,
     step: 1,
     scramble: 20,
@@ -82,8 +86,16 @@ export default function Home() {
               />
             </div>
 
-            <h1 ref={scrambleRefH1} className="text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 min-h-[60px] md:min-h-[80px]">
-            </h1>
+            {/* --- ZMODYFIKOWANY NAGŁÓWEK Z KURSOREM --- */}
+            <div className="flex items-center justify-center min-h-[60px] md:min-h-[80px]">
+              <h1 ref={scrambleRefH1} className="text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+              </h1>
+              {isScrambleDone && (
+                <span className="text-5xl md:text-6xl font-bold text-emerald-400 ml-1 animate-comet-cursor">
+                  _
+                </span>
+              )}
+            </div>
             
             <h2 ref={scrambleRefH2} className="text-2xl font-medium text-slate-300 min-h-[40px]">
             </h2>
@@ -139,7 +151,7 @@ export default function Home() {
               <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-emerald-400 transition-colors group">
                 <h4 className="text-xl font-bold text-emerald-400 mb-2">Weź Słowo - API & Web App</h4>
                 <p className="text-slate-400 mb-4 text-sm leading-relaxed">
-                  Aplikacja losująca wersety biblijne. Projekt wykorzystany do testów wydajnościowych (Lighthouse) oraz walidacji odpowiedzi z REST API.
+                  Aplikacja losująca wersety biblijne. Projekt przygotowywany do testów wydajnościowych (Google Lighthouse oraz Jmeter) oraz walidacji odpowiedzi z REST API.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="text-xs font-semibold bg-emerald-900/50 text-emerald-300 px-2 py-1 rounded">REST API</span>

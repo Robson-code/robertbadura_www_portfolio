@@ -43,3 +43,38 @@
   /* Używamy 'steps', żeby klatki przeskakiwały agresywnie, a nie płynnie */
   animation: cyber-decode 0.9s steps(1) forwards;
 }
+
+/* =========================================
+   ANIMACJA KURSORA (KOMETA + BLINK)
+   ========================================= */
+
+@keyframes comet-land {
+  0% {
+    opacity: 0;
+    transform: translate(200px, -200px) scale(2, 0.5) rotate(-45deg);
+    text-shadow: 0 0 30px #34d399, 0 0 60px #34d399; /* Mocne zielone światło */
+  }
+  70% {
+    opacity: 1;
+    transform: translate(-10px, 10px) scale(0.9, 1.1) rotate(0deg);
+    text-shadow: 0 0 10px #34d399;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1, 1) rotate(0deg);
+    text-shadow: 0 0 0px transparent;
+  }
+}
+
+@keyframes terminal-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-comet-cursor {
+  display: inline-block;
+  /* Dwie animacje w jednej: lądowanie trwa 0.5s, a mruganie włącza się po 0.5s */
+  animation: 
+    comet-land 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards,
+    terminal-blink 1s step-end infinite 0.5s;
+}
