@@ -1,5 +1,6 @@
 'use client';
 
+import Chatbot from './components/Chatbot';
 import { useState } from 'react';
 import Image from 'next/image';
 import LiveCVPreview from './components/LiveCVPreview';
@@ -67,7 +68,8 @@ export default function Home() {
 
         <LiveCVPreview />
 
-        <div className="lg:col-span-8 xl:col-span-9 flex flex-col items-center">
+        {/* --- BLOK A: GŁÓWNA TREŚĆ STRONY (order-1 na mobile, order-2 na PC) --- */}
+        <div className="order-1 lg:order-2 lg:col-span-8 xl:col-span-9 flex flex-col items-center">
           
           <div className="max-w-2xl text-center space-y-6 flex flex-col items-center">
             <div className="relative w-32 h-32 mb-4">
@@ -80,11 +82,9 @@ export default function Home() {
               />
             </div>
 
-            {/* PODMIENIONY NAGŁÓWEK Z REFERENCJĄ DO ANIMACJI */}
             <h1 ref={scrambleRefH1} className="text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 min-h-[60px] md:min-h-[80px]">
             </h1>
             
-            {/* PODMIENIONY PODTYTUŁ Z REFERENCJĄ DO ANIMACJI */}
             <h2 ref={scrambleRefH2} className="text-2xl font-medium text-slate-300 min-h-[40px]">
             </h2>
             
@@ -212,7 +212,14 @@ export default function Home() {
             </div>
           </div>
 
+        </div> {/* --- KONIEC BLOKU A --- */}
+
+        {/* --- BLOK C: CHATBOT (order-3 na każdym ekranie, przesunięty w prawo na PC) --- */}
+        <div className="order-3 lg:order-3 lg:col-span-8 lg:col-start-5 xl:col-span-9 xl:col-start-4 w-full mb-24 no-print">
+           <h3 className="text-2xl font-bold border-b border-slate-700 pb-4 mb-8">Ask my AI Assistant 🤖</h3>
+           <Chatbot />
         </div>
+
       </div>
     </main>
   );

@@ -1,6 +1,6 @@
 export default function LiveCVPreview() {
   return (
-    <aside className="lg:col-span-4 xl:col-span-3 hidden lg:block sticky top-8 h-[calc(100vh-4rem)] no-print">
+    <aside className="w-full lg:col-span-4 xl:col-span-3 order-2 lg:order-1 lg:sticky top-8 lg:h-[calc(100vh-4rem)] h-auto no-print">
       <div className="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 backdrop-blur-sm h-full flex flex-col">
         
         {/* NAGŁÓWEK KARTY */}
@@ -25,7 +25,7 @@ export default function LiveCVPreview() {
                 
                 <div className="relative">
                   <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></div>
-                  <h5 className="text-sm font-bold text-slate-200">QA Automation Engineer</h5>
+                  <h5 className="text-sm font-bold text-slate-200">QA Engineer</h5>
                   <p className="text-xs text-blue-400 mb-1">ADB Polska • 2022 - Obecnie</p>
                   <p className="text-xs text-slate-400 leading-relaxed">
                     Budowa frameworków E2E w Playwright i TypeScript. Konfiguracja pipeline'ów CI/CD w GitHub Actions.
